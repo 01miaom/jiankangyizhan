@@ -43,4 +43,11 @@ yanzhengma.send_keys(res)
 
 browser.find_element_by_id('btn_login').click()
 
-
+#get time by using taobao api
+import json
+from urllib import request
+from urllib.request import Request,urlopen
+import time
+browser.set_page_load_timeout(200)
+browser.set_script_timeout(200)
+url="http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp"
