@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import ddddocr
 from PIL import Image
 
-browser=webdriver.Chrome("/usr/local/bin/chromedriver")
+browser=webdriver.Chrome("/usr/local/bin/chromedriver")#需要修改对应browser drive的路径
 
 url="https://hk.sz.gov.cn:8118/userPage/login"
 browser.get(url)
