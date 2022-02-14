@@ -8,3 +8,6 @@ https://chromedriver.chromium.org/downloads
 ### Need to change the corresponding id and password
 
 ### Need to create a folder name spider to store the verification code
+
+### Disclaimer of warranty
+If it is used for non-learning purposes and causes consequences, it is not related to this project
