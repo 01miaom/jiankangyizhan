@@ -59,7 +59,7 @@ while 1==1:
     timeArray=time.localtime(int(data[149:162]))
     jsTime=time.strftime("%Y-%m-%d %H:%M:%S")
     nowTime=jsTime[11:19]
-    if nowTime=="10:22:00":
+    if nowTime=="10:00:00":
         browser.find_element_by_id('a_canBookHotel').click()
         element=WebDriverWait(browser,120,0.1).until(
             EC.presence_of_element_located((By.ID,"divSzArea"))
