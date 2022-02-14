@@ -51,3 +51,20 @@ import time
 browser.set_page_load_timeout(200)
 browser.set_script_timeout(200)
 url="http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp"
+while 1==1:
+    r=Request(url)
+    js=urlopen(r)
+    data=js.read()
+    data=str(data)
+    timeArray=time.localtime(int(data[149:162]))
+    jsTime=time.strftime("%Y-%m-%d %H:%M:%S")
+    nowTime=jsTime[11:19]
+    if nowTime=="10:22:00":
+        browser.find_element_by_id('a_canBookHotel').click()
+        element=WebDriverWait(browser,120,0.1).until(
+            EC.presence_of_element_located((By.ID,"divSzArea"))
+            )
+        browser.find_element_by_class_name('orange').click()
+        print(nowTime)
+        break;
+
