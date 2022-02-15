@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import ddddocr
 from PIL import Image
+import requests
 
 browser=webdriver.Chrome("/usr/local/bin/chromedriver")#需要修改对应browser drive的路径
 
