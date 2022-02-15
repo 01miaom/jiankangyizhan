@@ -43,7 +43,7 @@ yanzhengma.send_keys(res)
 
 browser.find_element_by_id('btn_login').click()
 
-#get time by using taobao api
+#get time by using taobao api，这一行之前的代码可以在10点前执行
 import json
 from urllib import request
 from urllib.request import Request,urlopen
@@ -68,3 +68,22 @@ while 1==1:
         print(nowTime)
         break;
 
+#预定确认页面验证码自动填写和提交
+browser.get_screenshot_as_file('spider/screenshot.png')
+element = browser.find_element_by_id('img_verify')
+left = int(element.location['x'])
+top = int(element.location['y'])
+right = int(element.location['x'] + element.size['width'])
+bottom = int(element.location['y'] + element.size['height'])
+im = Image.open('spider/screenshot.png')
+im = im.crop((left, top, right, bottom))
+im.save('spider/code.png')
+ocr=ddddocr.DdddOcr()
+with open('spider/code.png','rb') as f:
+    img_bytes=f.read()
+res=ocr.classification(img_bytes)
+print(res)
+yanzhengma1=browser.find_element_by_id('checkCode')
+yanzhengma1.send_keys(res)
+browser.find_element_by_id('btnSubmit').click()
+browser.find_element_by_xpath("//span[text()=\"确定\"]").click()
