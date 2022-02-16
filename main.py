@@ -57,6 +57,23 @@ import time
 browser.set_page_load_timeout(200)
 browser.set_script_timeout(200)
 url="http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp"
+c=browser.get_cookies()
+cookies={}
+for cookie in c:
+    cookies[cookie['name']]=cookie['value']
+#print(cookies)
+head={
+    'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36' 
+}
+url="http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp"
+c=browser.get_cookies()
+cookies={}
+for cookie in c:
+    cookies[cookie['name']]=cookie['value']
+print(cookies)
+head={
+    'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36' 
+}
 while 1==1:
     r=Request(url)
     js=urlopen(r)
