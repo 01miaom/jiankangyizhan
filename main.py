@@ -6,6 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import ddddocr
 from PIL import Image
 import requests
+import cv2
+import numpy as np
 
 browser=webdriver.Chrome("/usr/local/bin/chromedriver")#需要修改对应browser drive的路径
 
@@ -34,8 +36,11 @@ im.save('spider/code.png')
 
 #验证码识别
 ocr=ddddocr.DdddOcr()
-with open('spider/code.png','rb') as f:
-    img_bytes=f.read()
+img=cv2.imread("spider/code.png")
+img2 = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+img2 = cv2.inRange(img2, lowerb=110, upperb=255)
+_,img_bytes=cv2.imencode('.png', img2)
+img_bytes=img_bytes.tobytes()
 res=ocr.classification(img_bytes)
 print(res)
 
@@ -80,8 +85,11 @@ im = Image.open('spider/screenshot.png')
 im = im.crop((left, top, right, bottom))
 im.save('spider/code.png')
 ocr=ddddocr.DdddOcr()
-with open('spider/code.png','rb') as f:
-    img_bytes=f.read()
+img=cv2.imread("spider/code.png")
+img2 = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+img2 = cv2.inRange(img2, lowerb=110, upperb=255)
+_,img_bytes=cv2.imencode('.png', img2)
+img_bytes=img_bytes.tobytes()
 res=ocr.classification(img_bytes)
 print(res)
 yanzhengma1=browser.find_element_by_id('checkCode')
