@@ -48,6 +48,7 @@ yanzhengma=browser.find_element_by_id('input_verifyCode')
 yanzhengma.send_keys(res)
 
 browser.find_element_by_id('btn_login').click()
+browser.find_element_by_xpath("//button[text()=\"確定\"]").click()
 
 #get time by using taobao api，这一行之前的代码可以在10点前执行
 import json
