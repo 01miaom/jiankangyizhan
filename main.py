@@ -57,7 +57,6 @@ from urllib.request import Request,urlopen
 import time
 browser.set_page_load_timeout(200)
 browser.set_script_timeout(200)
-url="http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp"
 c=browser.get_cookies()
 cookies={}
 for cookie in c:
@@ -66,16 +65,20 @@ for cookie in c:
 head={
     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36' 
 }
+url1="http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp"
+r=Request(url1)
+js=urlopen(r)
+data=js.read()
+data=str(data)
+dt=int(data[149:162])/1000-time.time()
 while 1==1:
-    r=Request(url)
-    js=urlopen(r)
-    data=js.read()
-    data=str(data)
-    timeArray=time.localtime(int(data[149:162])/1000)
-    jsTime=time.strftime("%Y-%m-%d %H:%M:%S",timeArray)
+    timeArray=time.localtime(time.time()+dt)
+    jsTime=time.strftime("%Y-%m-%d %H:%M:%S")
     nowTime=jsTime[11:19]
     if nowTime=="10:00:00":
-        browser.find_element_by_id('a_canBookHotel').click()
+        url="https://hk.sz.gov.cn:8118/passInfo/detail"
+        browser.get(url)
+        #browser.find_element_by_id('a_canBookHotel').click()
         element=WebDriverWait(browser,120,0.1).until(
             EC.presence_of_element_located((By.ID,"divSzArea"))
             )
