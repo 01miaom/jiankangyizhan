@@ -25,7 +25,7 @@ https://chromedriver.chromium.org/downloads
 
 ## Related repository
 
-- [健康驿站蹲票](https://githu.com/KEXT1977/yizhan)
+- [健康驿站蹲票](https://github.com/KEXT1977/yizhan)
 - [健康驿站](https://github.com/RussellXY/jiankangyizhan)
 - [深圳健康驿站脚本](https://github.com/HermanL02/ShenzhenHealthStationAutoReserve)
 - [健康驿站抢票](https://github.com/zhong-yy/Grab_HK2SZ_ticket)
