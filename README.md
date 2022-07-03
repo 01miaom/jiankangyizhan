@@ -30,5 +30,9 @@ https://chromedriver.chromium.org/downloads
 - [深圳健康驿站脚本](https://github.com/HermanL02/ShenzhenHealthStationAutoReserve)
 - [健康驿站抢票](https://github.com/zhong-yy/Grab_HK2SZ_ticket)
 
+## Telegram link
+
+- https://t.me/+V1i485cX5yY2MTk1
+
 ## Disclaimer of warranty
 If it is used for non-learning purposes and causes consequences, it is not related to this project
