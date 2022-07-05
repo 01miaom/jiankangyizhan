@@ -4,7 +4,7 @@
 
 In view of the fact that there are too many charging scripts, the time for a website to grab a spot has been shortened to 25 seconds, far exceeding the limit that non-script users can grab. So open source this script. This script is for learning purposes only, not for commercial use.
 
-Some code may be invalid after the website is updated.
+Some code may be invalid after the verification code system is updated.
 
 
 ## Preparation before starting
@@ -18,6 +18,8 @@ https://chromedriver.chromium.org/downloads
 ### 3. Need to create a folder name spider to store the verification code
 
 ## Version log
+
+- 2022.7.5 Add requirement file
 
 - 2022.6.15 Update verification code preprocessing function
   ![before](/spider/code.png)
