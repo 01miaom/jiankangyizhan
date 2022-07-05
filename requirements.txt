@@ -1,0 +1,5 @@
+selenium<4.3.0
+ddddocr
+requests
+numpy
+opencv-python
